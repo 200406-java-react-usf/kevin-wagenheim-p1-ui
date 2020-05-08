@@ -13,4 +13,4 @@ phases:
       # - npm run build
   post_build:
     commands:
-      - aws s3 sync ./ s3://revaboards-ui-demo
+      - aws s3 sync . s3://revaboards-ui-demo
