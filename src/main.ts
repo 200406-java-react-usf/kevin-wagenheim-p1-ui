@@ -1,4 +1,4 @@
-const API_URL = 'http://kevinwagenheimproject1api-env.eba-pfzxxg4c.us-east-1.elasticbeanstalk.com';
+const API_URL = 'http://localhost:8080';
 
 window.onload = function () {
 
@@ -14,7 +14,7 @@ async function testFunc(){
     let resp = await fetch(`${API_URL}/users`);
     let data = await resp.json();
 
-    document.getElementById('maindiv').innerText = data;
+    document.getElementById('maindiv').innerText = JSON.stringify(data);
 
 }
 
