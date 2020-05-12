@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:8080';
+const DEV_API_URL = 'http://localhost:8080';
+const API_URL = 'http://kevinwagenheimproject1api-env.eba-pfzxxg4c.us-east-1.elasticbeanstalk.com'
 
 window.onload = function () {
 
