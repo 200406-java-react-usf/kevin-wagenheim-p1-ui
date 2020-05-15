@@ -2,6 +2,8 @@ import React, {SyntheticEvent, useState} from 'react';
 import {Typography, FormControl, InputLabel, Input, Button, makeStyles} from '@material-ui/core/';
 import {Alert} from '@material-ui/lab';
 import {User} from '../models/users';
+import {authorize} from '../remote/auth-service';
+import { getAllUsers } from '../remote/user-service';
 
 interface ILoginProps{
 
@@ -45,8 +47,14 @@ function LoginComponent(props: ILoginProps){
 
     let login =  async (e: SyntheticEvent) => {
 
+        let authUser = await authorize(username, password);
+        props.setAuthUser(authUser);
 
+    }
 
+    let getUsers = async (e: SyntheticEvent) => {
+
+        console.log(await getAllUsers());
     }
 
     return(
@@ -80,6 +88,8 @@ function LoginComponent(props: ILoginProps){
                     <br></br>
 
                     <Button onClick = {login} variant = "contained" color = "primary" size = "medium">Login</Button>
+
+                    <Button onClick = {getUsers} variant = "contained" color = "primary" size = "medium">Login</Button>
 
                 </form>
 
