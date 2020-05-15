@@ -16,23 +16,15 @@ function App() {
     <Router>
 
       <AppBar color = "primary" position = "static">
-
         <Toolbar>                           
-
           <Typography variant = "h5" color = "inherit">
-
             <NavbarComponent />
-
           </Typography>
-
         </Toolbar>
-
       </AppBar>
 
       <Switch>
-
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>
-
       </Switch>
 
     </Router>
