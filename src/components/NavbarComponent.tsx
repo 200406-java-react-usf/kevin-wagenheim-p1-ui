@@ -32,7 +32,7 @@ const NavbarComponent = (props: INavBarProps) => {
 
                     <ListItemText inset>
                         <Typography color = "inherit" variant = "h6">
-                            Home
+                            <Link to = "/home" className = {classes.link}>Home</Link>
                         </Typography>
                     </ListItemText>
 
