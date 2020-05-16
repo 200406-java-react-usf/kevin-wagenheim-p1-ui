@@ -4,6 +4,7 @@ import {Alert} from '@material-ui/lab';
 import {User} from '../models/users';
 import {authorize} from '../remote/auth-service';
 import { getAllUsers } from '../remote/user-service';
+import { Redirect } from 'react-router-dom';
 
 interface ILoginProps{
 
@@ -52,13 +53,11 @@ function LoginComponent(props: ILoginProps){
 
     }
 
-    let getUsers = async (e: SyntheticEvent) => {
-
-        console.log(await getAllUsers());
-    }
-
     return(
 
+        props.authUser ? 
+            <Redirect to = "/home"/> : 
+        
         <>
 
             <div className = {classes.loginContainer}>
@@ -88,8 +87,6 @@ function LoginComponent(props: ILoginProps){
                     <br></br>
 
                     <Button onClick = {login} variant = "contained" color = "primary" size = "medium">Login</Button>
-
-                    <Button onClick = {getUsers} variant = "contained" color = "primary" size = "medium">Login</Button>
 
                 </form>
 

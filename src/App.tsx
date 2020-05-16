@@ -3,6 +3,7 @@ import './App.css';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import NavbarComponent from './components/NavbarComponent';
 import LoginComponent from './components/LoginComponent';
+import HomeComponent from './components/HomeComponent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {User} from './models/users';
 
@@ -25,6 +26,7 @@ function App() {
 
       <Switch>
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>
+        <Route path = "/home" render = {() => <HomeComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
