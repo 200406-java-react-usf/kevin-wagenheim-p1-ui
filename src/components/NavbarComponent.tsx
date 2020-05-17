@@ -1,5 +1,4 @@
 import React from 'react';
-import {User} from '../models/users';
 import {makeStyles, List, Typography, ListItem, ListItemText} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 
