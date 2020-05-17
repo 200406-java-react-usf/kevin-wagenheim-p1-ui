@@ -6,6 +6,7 @@ import LoginComponent from './components/LoginComponent';
 import HomeComponent from './components/HomeComponent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {User} from './models/users';
+import UserComponent from './components/UserComponent';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Switch>
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>
         <Route path = "/home" render = {() => <HomeComponent authUser = {authUser}/>}/>
+        <Route path = "/reimbursments" render = {() => <UserComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
