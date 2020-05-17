@@ -13,12 +13,6 @@ const UserComponent = (props: IUserProps) => {
 
     const [usersState, setUsersState] = useState([] as User[]);
 
-    // getAllReimbs().then(function (data){
-
-    //     console.log(data);
-
-    // });
-
     let users: any[] = [];
 
     useEffect(() => {
@@ -31,7 +25,14 @@ const UserComponent = (props: IUserProps) => {
 
                 users.push(
 
-                    <div key = {user.id} >{user.firstName}</div>
+                    <tr>
+                        <td>{user.id}</td>
+                        <td>{user.firstName}</td>
+                        <td>{user.lastName}</td>
+                        <td>{user.username}</td>
+                        <td>{user.email}</td>
+                        <td>{user.roleId}</td>
+                    </tr>
 
                 )
 
@@ -47,7 +48,7 @@ const UserComponent = (props: IUserProps) => {
 
     return (
 
-        !props.authUser || (props.authUser.roleId !== 2) ?
+        !props.authUser || (props.authUser.roleId !== 1) ?
         
         <>
             <h1>Youre not authorized to view this page</h1>
@@ -57,7 +58,25 @@ const UserComponent = (props: IUserProps) => {
         
         <>
             <h1>User Component</h1>
-            {usersState}
+            
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {usersState}
+                </tbody>
+
+            </table>
 
         </>
     );

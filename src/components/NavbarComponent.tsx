@@ -49,7 +49,7 @@ const NavbarComponent = (props: INavBarProps) => {
 
                     <ListItemText inset>
                         <Typography color = "inherit" variant = "h6">
-                            <Link to = "/reimbursments" className = {classes.link}>Reimbursments</Link>
+                            <Link to = "/users" className = {classes.link}>Users</Link>
                         </Typography>
                     </ListItemText>
 
