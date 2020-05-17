@@ -1,9 +1,7 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Typography, FormControl, InputLabel, Input, Button, makeStyles} from '@material-ui/core/';
-import {Alert} from '@material-ui/lab';
 import {User} from '../models/users';
 import {authorize} from '../remote/auth-service';
-import { getAllUsers } from '../remote/user-service';
 import { Redirect } from 'react-router-dom';
 
 interface ILoginProps{
@@ -32,7 +30,6 @@ function LoginComponent(props: ILoginProps){
 
     const[username, setUsername] = useState('');
     const[password, setPassword] = useState('');
-    const[errorMessage, setErrorMessage] = useState('');
 
     let updateUsername = (e: any) => {
 
@@ -80,7 +77,7 @@ function LoginComponent(props: ILoginProps){
 
                         <InputLabel htmlFor = "password"></InputLabel>
 
-                        <Input onChange = {updatePassword} value = {password} id = "password" type = "password" placeholder = "Enter a Password"/>
+                        <Input onChange = {updatePassword} value = {password} id = "password" type = "text" placeholder = "Enter a Password"/>
 
                     </FormControl>
 
