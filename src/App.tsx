@@ -6,6 +6,8 @@ import LoginComponent from './components/LoginComponent';
 import HomeComponent from './components/HomeComponent';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {User} from './models/users';
+import UserComponent from './components/UserComponent';
+import ReimbComponent from './components/ReimbComponent';
 
 function App() {
 
@@ -19,7 +21,7 @@ function App() {
       <AppBar color = "primary" position = "static">
         <Toolbar>                           
           <Typography variant = "h5" color = "inherit">
-            <NavbarComponent />
+            <NavbarComponent authUser = {authUser} setAuthUser = {setAuthUser}/>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -27,6 +29,8 @@ function App() {
       <Switch>
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>
         <Route path = "/home" render = {() => <HomeComponent authUser = {authUser}/>}/>
+        <Route path = "/users" render = {() => <UserComponent authUser = {authUser}/>}/>
+        <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
