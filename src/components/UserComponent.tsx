@@ -9,8 +9,7 @@ interface IUserProps{
 }
 
 const UserComponent = (props: IUserProps) => {
-    //@ts-ignore
-
+    
     const [usersState, setUsersState] = useState([] as User[]);
 
     let users: any[] = [];
@@ -31,7 +30,17 @@ const UserComponent = (props: IUserProps) => {
                         <td>{user.lastName}</td>
                         <td>{user.username}</td>
                         <td>{user.email}</td>
-                        <td>{user.roleId}</td>
+
+                        {
+                        user.roleId === 1 ?
+                            <td>Admin</td> 
+                            :
+                        user.roleId === 2 ?
+                            <td>Financial Manager</td>
+                            :
+                            <td>User</td>
+                        }
+
                     </tr>
 
                 )
