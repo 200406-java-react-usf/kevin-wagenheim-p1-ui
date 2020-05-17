@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {User} from './models/users';
 import UserComponent from './components/UserComponent';
 import ReimbComponent from './components/ReimbComponent';
+import RegisterComponent from './components/RegisterComponent';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path = "/home" render = {() => <HomeComponent authUser = {authUser}/>}/>
         <Route path = "/users" render = {() => <UserComponent authUser = {authUser}/>}/>
         <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser}/>}/>
+        <Route path = "/register" render = {() => <RegisterComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
