@@ -21,7 +21,7 @@ function App() {
       <AppBar color = "primary" position = "static">
         <Toolbar>                           
           <Typography variant = "h5" color = "inherit">
-            <NavbarComponent authUser = {authUser}/>
+            <NavbarComponent authUser = {authUser} setAuthUser = {setAuthUser}/>
           </Typography>
         </Toolbar>
       </AppBar>
