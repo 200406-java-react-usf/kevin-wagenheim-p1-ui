@@ -15,3 +15,10 @@ export async function getUserReimbs(inputId: number){
     return resp.data;
 
 }
+
+export async function getReimbById(inputId: number){
+
+    let resp = await reimbClient.get(`/id/${inputId}`);
+    return resp.data;
+
+}
