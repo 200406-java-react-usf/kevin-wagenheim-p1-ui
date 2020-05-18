@@ -9,10 +9,8 @@ export async function getAllReimbs(){
 
 export async function getUserReimbs(inputId: number){
 
-    let resp = await reimbClient.get('reimbursments/myreimbursments', {
-        params: {
-            id: inputId
-        }
+    let resp = await reimbClient.post('/reimbursments/myreimbursments', {
+        id: inputId
     });
     return resp.data;
 
