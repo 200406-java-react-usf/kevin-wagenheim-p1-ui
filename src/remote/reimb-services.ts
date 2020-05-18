@@ -9,7 +9,7 @@ export async function getAllReimbs(){
 
 export async function getUserReimbs(inputId: number){
 
-    let resp = await reimbClient.get('/myreimbursments', {
+    let resp = await reimbClient.get('reimbursments/myreimbursments', {
         params: {
             id: inputId
         }
