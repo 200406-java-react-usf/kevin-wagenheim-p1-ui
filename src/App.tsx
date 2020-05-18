@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {User} from './models/users';
+
 import NavbarComponent from './components/NavbarComponent';
 import LoginComponent from './components/LoginComponent';
 import HomeComponent from './components/HomeComponent';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {User} from './models/users';
 import UserComponent from './components/UserComponent';
 import ReimbComponent from './components/ReimbComponent';
 import RegisterComponent from './components/RegisterComponent';
+import NewReimbComponent from './components/NewReimbComponent';
 
 function App() {
 
@@ -33,6 +35,7 @@ function App() {
         <Route path = "/users" render = {() => <UserComponent authUser = {authUser}/>}/>
         <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser}/>}/>
         <Route path = "/register" render = {() => <RegisterComponent authUser = {authUser}/>}/>
+        <Route path = "/newreimbursment" render = {() => <NewReimbComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
