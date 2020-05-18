@@ -11,6 +11,7 @@ import UserComponent from './components/UserComponent';
 import ReimbComponent from './components/ReimbComponent';
 import RegisterComponent from './components/RegisterComponent';
 import NewReimbComponent from './components/NewReimbComponent';
+import UserReimbsComponent from './components/UserReimbsComponent';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser}/>}/>
         <Route path = "/register" render = {() => <RegisterComponent authUser = {authUser}/>}/>
         <Route path = "/newreimbursment" render = {() => <NewReimbComponent authUser = {authUser}/>}/>
+        <Route path = "/myreimbursments" render = {() => <UserReimbsComponent authUser = {authUser}/>}/>
       </Switch>
 
     </Router>
