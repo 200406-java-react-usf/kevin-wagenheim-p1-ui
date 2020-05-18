@@ -6,3 +6,10 @@ export async function getAllReimbs(){
     return resp.data;
 
 }
+
+export async function getUserReimbs(){
+
+    let resp = await reimbClient.get('/myreimbursments');
+    return resp.data;
+
+}
