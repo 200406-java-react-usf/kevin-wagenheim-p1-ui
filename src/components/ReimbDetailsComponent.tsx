@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import {Reimbursments} from '../models/reimb';
 import {User} from '../models/users';
+import { Button } from '@material-ui/core';
+import { reimbClient } from '../remote/reimb-client';
 
 interface IReimbDetailsProps{
 
@@ -10,6 +12,42 @@ interface IReimbDetailsProps{
 }
 
 function ReimbDetailsComponent(props: IReimbDetailsProps){
+
+    let approveReimb = (e: SyntheticEvent) => {
+
+        reimbClient.put('/reimbursments/resolve', {
+
+            id: props.thisReimb.id,
+            amount: props.thisReimb.amount,
+            submitted: props.thisReimb.submitted,
+            resolved: null,
+            description: props.thisReimb.description,
+            authorId: props.thisReimb.authorId,
+            resolverId: props.authUser.id,
+            reimbStatusId: 3,
+            reimbTypeId: props.thisReimb.reimbTypeId
+
+        });
+
+    }
+
+    let denyReimb = (e: SyntheticEvent) => {
+
+        reimbClient.put('/reimbursments/resolve', {
+
+            id: props.thisReimb.id,
+            amount: props.thisReimb.amount,
+            submitted: props.thisReimb.submitted,
+            resolved: null,
+            description: props.thisReimb.description,
+            authorId: props.thisReimb.authorId,
+            resolverId: props.authUser.id,
+            reimbStatusId: 2,
+            reimbTypeId: props.thisReimb.reimbTypeId
+
+        });
+
+    }
 
     return(
 
@@ -44,6 +82,22 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
 
 
         </table>
+
+        {
+            !props.thisReimb.resolved && props.authUser.roleId === 2?
+            <>
+
+                <Button onClick = {approveReimb} variant = "contained" color = "primary" size = "medium">Approve</Button>
+                <Button onClick = {denyReimb} variant = "contained" color = "primary" size = "medium">Deny</Button>
+
+            </>
+        
+        :
+        <>
+
+        </>
+        
+        }
 
         </>
 
