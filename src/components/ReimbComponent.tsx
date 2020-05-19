@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import {Reimbursments} from '../models/reimb';
-import {getAllReimbs} from '../remote/reimb-services';
+import {getAllReimbs, getReimbById} from '../remote/reimb-services';
 import {User} from '../models/users';
+import { Link } from 'react-router-dom';
 
 interface IReimbProps{
 
     authUser: User;
+    setThisReimb: (reimb: Reimbursments) => void;
 
 }
 
@@ -27,10 +29,7 @@ const ReimbComponent = (props: IReimbProps) =>{
 
                     <tr>
 
-                        <td>{reimb.id}</td>
                         <td>{reimb.amount}</td>
-                        <td>{reimb.submitted}</td>
-                        <td>{reimb.resolved}</td>
                         <td>{reimb.description}</td>
                         <td>{reimb.authorId}</td>
                         <td>{reimb.resolverId}</td>
@@ -60,6 +59,13 @@ const ReimbComponent = (props: IReimbProps) =>{
                             :
                                 <td>Other</td>
                         }
+
+                        <td><Link to = {`/reimbursmentdetails-${reimb.id}`} onClick = {
+                            async () => {
+                                const response = await getReimbById(reimb.id);
+                                props.setThisReimb(response);
+                            }
+                        }>Details</Link></td>
 
 
                     </tr>
@@ -91,10 +97,7 @@ const ReimbComponent = (props: IReimbProps) =>{
 
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Amount</th>
-                        <th>Submitted</th>
-                        <th>Resolved</th>
                         <th>Description</th>
                         <th>Author</th>
                         <th>Resolver</th>
