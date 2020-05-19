@@ -12,11 +12,15 @@ import ReimbComponent from './components/ReimbComponent';
 import RegisterComponent from './components/RegisterComponent';
 import NewReimbComponent from './components/NewReimbComponent';
 import UserReimbsComponent from './components/UserReimbsComponent';
+import { Reimbursments } from './models/reimb';
+import ReimbDetailsComponent from './components/ReimbDetailsComponent';
 
 function App() {
 
   //@ts-ignore
   const [authUser, setAuthUser] = useState(null as User);
+  //@ts-ignore
+  const [thisReimb, setThisReimb] = useState(new Reimbursments(0,0,'','','',0,0,0,0));
 
   return (
     <>
@@ -34,10 +38,11 @@ function App() {
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>
         <Route path = "/home" render = {() => <HomeComponent authUser = {authUser}/>}/>
         <Route path = "/users" render = {() => <UserComponent authUser = {authUser}/>}/>
-        <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser}/>}/>
+        <Route path = "/reimbursments" render = {() => <ReimbComponent authUser = {authUser} setThisReimb = {setThisReimb}/>}/>
         <Route path = "/register" render = {() => <RegisterComponent authUser = {authUser}/>}/>
         <Route path = "/newreimbursment" render = {() => <NewReimbComponent authUser = {authUser}/>}/>
         <Route path = "/myreimbursments" render = {() => <UserReimbsComponent authUser = {authUser}/>}/>
+        <Route path = {`/reimbursmentdetails-${thisReimb.id}`} render = {() => <ReimbDetailsComponent authUser = {authUser} thisReimb = {thisReimb}/>}/>
       </Switch>
 
     </Router>
