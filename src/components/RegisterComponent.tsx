@@ -146,7 +146,7 @@ function RegisterComponent(props: IRegisterProps){
                                 <option value = {1}>Admin</option>
                                 <option value = {2}>Financial Manager</option>
                             </Select>
-                </FormControl>
+                    </FormControl>
 
                     <br/> <br/>
 
