@@ -18,7 +18,7 @@ export async function getUserReimbs(inputId: number){
 
 export async function getReimbById(inputId: number){
 
-    let resp = await reimbClient.get(`/id/${inputId}`);
+    let resp = await reimbClient.get(`/reimbursments/id/${inputId}`);
     return resp.data;
 
 }
