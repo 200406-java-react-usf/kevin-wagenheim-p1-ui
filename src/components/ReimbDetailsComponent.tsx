@@ -51,6 +51,12 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
 
     return(
 
+        !props.authUser ?
+
+            <h1>Please login to view this page</h1>
+
+        :
+
         <>
 
         <table>
