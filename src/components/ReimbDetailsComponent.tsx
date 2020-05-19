@@ -80,9 +80,35 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
                 <tr><td>Resolver:</td></tr>
                 <tr><td>{props.thisReimb.resolverId}</td></tr>
                 <tr><td>Status:</td></tr>
-                <tr><td>{props.thisReimb.reimbStatusId}</td></tr>
+
+                {
+                    props.thisReimb.reimbStatusId === 1 ?
+                        <tr><td>Pending</td></tr>
+                    :
+                    props.thisReimb.reimbStatusId === 2 ?
+                        <tr><td>Denied</td></tr>
+                    :
+                    props.thisReimb.reimbStatusId === 3 ?
+                        <tr><td>Approved</td></tr>
+                    :
+                        <tr><td>Unknown</td></tr>
+                }
+
                 <tr><td>Type:</td></tr>
-                <tr><td>{props.thisReimb.reimbTypeId}</td></tr>
+
+                {
+                    props.thisReimb.reimbTypeId === 1 ?
+                        <tr><td>Lodging</td></tr>
+                    :
+                    props.thisReimb.reimbTypeId === 2 ?
+                        <tr><td>Lodging</td></tr>
+                    :
+                    props.thisReimb.reimbTypeId === 3 ?
+                        <tr><td>Lodging</td></tr>
+                    :
+                        <tr><td>Other</td></tr>
+                }
+                
 
             </tbody>
 
