@@ -3,6 +3,7 @@ import { Typography, FormControl, InputLabel, Input, makeStyles, Button, Select 
 import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
 import { Reimbursments } from '../models/reimb';
+import { Link } from 'react-router-dom';
 
 interface IUpdateReimbProps{
 
@@ -120,7 +121,19 @@ function UpdateReimbComponent(props: IUpdateReimbProps){
 
                     <br/> <br/>
 
-                    <Button onClick = {updateReimb} variant = "contained" color = "primary" size = "medium">Submit</Button>
+                    {
+
+                        props.authUser.roleId === 2 ?
+
+                            <Link to = '/reimbursments' onClick = {updateReimb}>Submit</Link>
+                        
+                        :
+
+                            <Link to = '/myreimbursments' onClick = {updateReimb}>Submit</Link>
+
+                    }
+
+                    
 
                 </form>
 

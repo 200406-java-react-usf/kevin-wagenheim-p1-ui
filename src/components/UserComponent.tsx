@@ -67,7 +67,7 @@ const UserComponent = (props: IUserProps) => {
 
         fetchData();
 
-    },[]);
+    },[users]);
 
     return (
 

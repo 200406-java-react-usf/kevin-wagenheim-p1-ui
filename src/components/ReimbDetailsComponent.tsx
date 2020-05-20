@@ -126,8 +126,8 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
             !props.thisReimb.resolved && props.authUser.roleId === 2?
             <>
 
-                <Button onClick = {approveReimb} variant = "contained" color = "primary" size = "medium">Approve</Button>
-                <Button onClick = {denyReimb} variant = "contained" color = "primary" size = "medium">Deny</Button>
+                <Link to = '/reimbursments' onClick = {approveReimb}>Approve</Link>
+                <Link to = '/reimbursments' onClick = {denyReimb}>Deny</Link>
 
             </>
         

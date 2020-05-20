@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useState } from 'react';
 import { Typography, FormControl, InputLabel, Input, makeStyles, Button, Select } from '@material-ui/core';
 import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
+import { Link } from 'react-router-dom';
 
 interface IRegisterProps{
 
@@ -148,7 +149,7 @@ function RegisterComponent(props: IRegisterProps){
 
                     <br/> <br/>
 
-                    <Button onClick = {registerUser} variant = "contained" color = "primary" size = "medium">Register</Button>
+                    <Link to = '/users' onClick = {registerUser}>Submit</Link>
 
                 </form>
 

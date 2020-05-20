@@ -3,6 +3,7 @@ import { Typography, FormControl, InputLabel, Input, makeStyles, Button, Select 
 import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
 import { Reimbursments } from '../models/reimb';
+import { Link } from 'react-router-dom';
 
 interface INewReimbProps{
 
@@ -110,7 +111,7 @@ function NewReimbComponent (props: INewReimbProps){
 
                     <br/> <br/>
 
-                    <Button onClick = {addReimb} variant = "contained" color = "primary" size = "medium">Submit</Button>
+                    <Link to = '/myreimbursments' onClick= {addReimb}>Submit</Link>
 
                 </form>
 

@@ -80,7 +80,7 @@ function UserReimbsComponent(props: IUserReimbsProps){
 
         fetchData();
 
-    }, []);
+    }, [reimbs]);
 
     return(
 
@@ -98,10 +98,7 @@ function UserReimbsComponent(props: IUserReimbsProps){
 
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Amount</th>
-                        <th>Submitted</th>
-                        <th>Resolved</th>
                         <th>Description</th>
                         <th>Author</th>
                         <th>Resolver</th>
