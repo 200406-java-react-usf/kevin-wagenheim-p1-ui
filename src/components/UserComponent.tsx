@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, SyntheticEvent } from 'react';
 import { User } from '../models/users';
-import { getAllUsers } from '../remote/user-service';
+import { getAllUsers, deleteUser } from '../remote/user-service';
+import { Button } from '@material-ui/core';
 
 interface IUserProps{
 
@@ -24,6 +25,8 @@ const UserComponent = (props: IUserProps) => {
 
                 users.push(
 
+                    <>
+
                     <tr>
                         <td>{user.id}</td>
                         <td>{user.firstName}</td>
@@ -41,7 +44,13 @@ const UserComponent = (props: IUserProps) => {
                             <td>User</td>
                         }
 
+                        <td><Button onClick = {async () => {
+                            await deleteUser(user.id);
+                        }} variant = "contained" color = "primary" size = "medium">Delete</Button></td>
+
                     </tr>
+
+                    </>
 
                 )
 
