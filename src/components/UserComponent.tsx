@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, SyntheticEvent } from 'react';
 import { User } from '../models/users';
-import { getAllUsers } from '../remote/user-service';
+import { getAllUsers, deleteUser } from '../remote/user-service';
+import { Link } from 'react-router-dom';
 
 interface IUserProps{
 
     authUser: User;
+    setThisUser: (user: User) => void;
 
 }
 
@@ -24,6 +26,8 @@ const UserComponent = (props: IUserProps) => {
 
                 users.push(
 
+                    <>
+
                     <tr>
                         <td>{user.id}</td>
                         <td>{user.firstName}</td>
@@ -41,7 +45,17 @@ const UserComponent = (props: IUserProps) => {
                             <td>User</td>
                         }
 
+                        <td><Link to = '/updateuser' onClick = {
+                            () => {props.setThisUser(new User(user.id, user.username, user.password, user.firstName, user.lastName, user.email, user.roleId))}    
+                        }>Update</Link></td>
+
+                        <td><Link to = '/users' onClick = {async () => {
+                            await deleteUser(user.id);
+                        }}>Delete</Link></td>
+
                     </tr>
+
+                    </>
 
                 )
 
