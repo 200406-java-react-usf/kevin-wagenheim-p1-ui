@@ -1,11 +1,12 @@
 import React, { useEffect, useState, SyntheticEvent } from 'react';
 import { User } from '../models/users';
 import { getAllUsers, deleteUser } from '../remote/user-service';
-import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 interface IUserProps{
 
     authUser: User;
+    setThisUser: (user: User) => void;
 
 }
 
@@ -44,9 +45,13 @@ const UserComponent = (props: IUserProps) => {
                             <td>User</td>
                         }
 
-                        <td><Button onClick = {async () => {
+                        <td><Link to = '/updateuser' onClick = {
+                            () => {props.setThisUser(new User(user.id, user.username, user.password, user.firstName, user.lastName, user.email, user.roleId))}    
+                        }>Update</Link></td>
+
+                        <td><Link to = '/users' onClick = {async () => {
                             await deleteUser(user.id);
-                        }} variant = "contained" color = "primary" size = "medium">Delete</Button></td>
+                        }}>Delete</Link></td>
 
                     </tr>
 
