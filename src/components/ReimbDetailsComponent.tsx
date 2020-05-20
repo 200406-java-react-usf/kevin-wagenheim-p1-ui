@@ -57,6 +57,12 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
 
         :
 
+        props.thisReimb.id === 0 ?
+
+            <h1>Please select a reimbursment in the reimbursments page</h1>
+
+        :            
+
         <>
 
         <table>
