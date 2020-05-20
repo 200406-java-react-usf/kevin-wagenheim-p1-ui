@@ -62,8 +62,6 @@ function RegisterComponent(props: IRegisterProps){
 
         newUser.roleId = e.currentTarget.value;
 
-        console.log(newUser.roleId);
-
     }
 
     let registerUser = (e: SyntheticEvent) => {
