@@ -6,3 +6,16 @@ export async function getAllUsers(){
     return await resp.data;
 
 }
+
+export async function deleteUser(id: number){
+
+    let resp = await reimbClient.delete('/users',{
+
+        data:{
+            user_id: id
+        }
+
+    });
+    return await resp.data;
+
+}
