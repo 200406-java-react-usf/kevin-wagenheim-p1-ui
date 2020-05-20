@@ -1,7 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 import {Reimbursments} from '../models/reimb';
 import {User} from '../models/users';
-import { Button } from '@material-ui/core';
 import { reimbClient } from '../remote/reimb-client';
 import { Link } from 'react-router-dom';
 
