@@ -4,13 +4,13 @@ import { Button } from '@material-ui/core';
 import { getAllReimbs } from '../remote/reimb-services';
 import { User } from '../models/users';
 
-interface IHomeProps{
+export interface IHomeProps{
 
     authUser: User;
 
 }
 
-const HomeComponent = (props: IHomeProps) => {
+function HomeComponent(props: IHomeProps) {
 
     return (
         !props.authUser.username ?
