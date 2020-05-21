@@ -99,7 +99,7 @@ function NewReimbComponent (props: INewReimbProps){
                     </FormControl>
 
                     <FormControl>
-                        <InputLabel htmlFor="age-native-simple">Reimburment Type</InputLabel>
+                        <InputLabel htmlFor="age-native-simple">Type</InputLabel>
                             <Select native onChange = {setType}>
                                 <option aria-label="None" value="" />
                                 <option value = {1}>Lodging</option>
