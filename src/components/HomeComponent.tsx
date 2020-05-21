@@ -12,27 +12,16 @@ interface IHomeProps{
 
 const HomeComponent = (props: IHomeProps) => {
 
-    let getRimbs = async (e: SyntheticEvent) => {
-
-        console.log(await getAllReimbs());
-    }
-
-    let printAuthUser = () => {
-
-        console.log(props.authUser);
-
-    }
-
     return (
         !props.authUser.username ?
             <Redirect to = "/login"/> :
         
         <>
-            <h1>Welcome, {props.authUser.username}</h1>
+            <div className = "mx-auto">
+                <h1 className = "display-4">Welcome, {props.authUser.username}</h1>
+            </div>
+            
 
-            <Button onClick = {getRimbs} variant = "contained" color = "primary" size = "medium">Login</Button>
-
-            <Button onClick = {printAuthUser} variant = "contained" color = "primary" size = "medium">PRINT</Button>
         </>
     );
 

@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useState } from 'react';
 import { Typography, FormControl, InputLabel, Input, makeStyles, Button, Select } from '@material-ui/core';
 import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
+import { Link } from 'react-router-dom';
 
 interface IUpdateUserProps{
 
@@ -155,7 +156,7 @@ function UpdateUserComponent(props: IUpdateUserProps){
 
                     <br/> <br/>
 
-                    <Button onClick = {updateUser} variant = "contained" color = "primary" size = "medium">update</Button>
+                    <Link to = '/users' onClick = {updateUser} className = "btn btn-primary btn-m">Submit</Link>
 
                 </form>
 

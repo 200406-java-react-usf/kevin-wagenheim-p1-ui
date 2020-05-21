@@ -47,11 +47,11 @@ const UserComponent = (props: IUserProps) => {
 
                         <td><Link to = '/updateuser' onClick = {
                             () => {props.setThisUser(new User(user.id, user.username, user.password, user.firstName, user.lastName, user.email, user.roleId))}    
-                        }>Update</Link></td>
+                        } className = "btn btn-primary btn-m">Update</Link></td>
 
                         <td><Link to = '/users' onClick = {async () => {
                             await deleteUser(user.id);
-                        }}>Delete</Link></td>
+                        }} className = "btn btn-primary btn-m">Delete</Link></td>
 
                     </tr>
 
@@ -67,7 +67,7 @@ const UserComponent = (props: IUserProps) => {
 
         fetchData();
 
-    },[]);
+    },[users]);
 
     return (
 
@@ -82,16 +82,16 @@ const UserComponent = (props: IUserProps) => {
         <>
             <h1>User Component</h1>
             
-            <table>
+            <table className = "table table-striped">
 
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th scope = "col">Id</th>
+                        <th scope = "col">First Name</th>
+                        <th scope = "col">Last Name</th>
+                        <th scope = "col">Username</th>
+                        <th scope = "col">Email</th>
+                        <th scope = "col">Role</th>
                     </tr>
                 </thead>
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {User} from './models/users';
 
 import NavbarComponent from './components/NavbarComponent';
@@ -37,6 +37,16 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
+
+      {
+        !authUser?
+
+          <Redirect to = "/login"/>
+
+        :
+
+          <Redirect to = "/home"/>
+      }
 
       <Switch>
         <Route path = "/login" render = {() => <LoginComponent authUser = {authUser} setAuthUser = {setAuthUser}/>}/>

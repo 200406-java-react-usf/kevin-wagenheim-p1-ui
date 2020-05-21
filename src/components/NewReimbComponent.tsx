@@ -3,6 +3,7 @@ import { Typography, FormControl, InputLabel, Input, makeStyles, Button, Select 
 import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
 import { Reimbursments } from '../models/reimb';
+import { Link } from 'react-router-dom';
 
 interface INewReimbProps{
 
@@ -98,7 +99,7 @@ function NewReimbComponent (props: INewReimbProps){
                     </FormControl>
 
                     <FormControl>
-                        <InputLabel htmlFor="age-native-simple">Reimburment Type</InputLabel>
+                        <InputLabel htmlFor="age-native-simple">Type</InputLabel>
                             <Select native onChange = {setType}>
                                 <option aria-label="None" value="" />
                                 <option value = {1}>Lodging</option>
@@ -110,7 +111,18 @@ function NewReimbComponent (props: INewReimbProps){
 
                     <br/> <br/>
 
-                    <Button onClick = {addReimb} variant = "contained" color = "primary" size = "medium">Submit</Button>
+                    {
+                        props.authUser.roleId === 2 ?
+
+                            <Link to = '/reimbursments' onClick= {addReimb} className = "btn btn-primary btn-m">Submit</Link>
+
+                        :
+
+                            <Link to = '/myreimbursments' onClick= {addReimb} className = "btn btn-primary btn-m">Submit</Link>
+
+                    }
+
+                    
 
                 </form>
 
