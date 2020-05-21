@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { User } from '../models/users';
 import { reimbClient } from '../remote/reimb-client';
 
-interface INavBarProps{
+export interface INavBarProps{
 
     authUser: User
     setAuthUser: (user: User) => void
