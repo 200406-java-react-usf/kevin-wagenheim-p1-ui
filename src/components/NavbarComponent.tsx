@@ -74,12 +74,6 @@ const NavbarComponent = (props: INavBarProps) => {
 
                                 <ListItemText inset>
                                     <Typography color = "inherit" variant = "h6">
-                                        <Link to = "/newreimbursment" className = {classes.link}>New Reimbursment</Link>
-                                    </Typography>
-                                </ListItemText>
-
-                                <ListItemText inset>
-                                    <Typography color = "inherit" variant = "h6">
                                         <Link to = '' onClick = {logout} className = {classes.link}>Logout</Link>
                                     </Typography>
                                 </ListItemText> 
