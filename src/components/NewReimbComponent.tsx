@@ -111,7 +111,18 @@ function NewReimbComponent (props: INewReimbProps){
 
                     <br/> <br/>
 
-                    <Link to = '/myreimbursments' onClick= {addReimb}>Submit</Link>
+                    {
+                        props.authUser.roleId === 2 ?
+
+                            <Link to = '/reimbursments' onClick= {addReimb}>Submit</Link>
+
+                        :
+
+                            <Link to = '/myreimbursments' onClick= {addReimb}>Submit</Link>
+
+                    }
+
+                    
 
                 </form>
 
