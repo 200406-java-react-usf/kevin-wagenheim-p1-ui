@@ -111,29 +111,33 @@ const ReimbComponent = (props: IReimbProps) =>{
 
             <h1>Reimbursments</h1>
 
-            <table>
+            <table className = "table table-striped">
 
                 <thead>
                     <tr>
-                        <th>Amount</th>
-                        <th>Description</th>
-                        <th>Author</th>
-                        <th>Resolver</th>
-                        <th>Status</th>
-                        <select value = {reimbStatus} onChange = {updateStatus}>
-                            <option value = {0}>All</option>
-                            <option value = {1}>Pending</option>
-                            <option value = {2}>Denied</option>
-                            <option value = {3}>Approved</option>
-                        </select>
-                        <th>Type</th>
-                        <select value = {reimbType} onChange = {updateType}>
-                            <option value = {0}>All</option>
-                            <option value = {1}>Lodging</option>
-                            <option value = {2}>Travel</option>
-                            <option value = {3}>Food</option>
-                            <option value = {4}>Other</option>
-                        </select>
+                        <th scope = "col">Amount</th>
+                        <th scope = "col">Description</th>
+                        <th scope = "col">Author</th>
+                        <th scope = "col">Resolver</th>
+                        <th scope = "col">
+                            Status
+                            <select value = {reimbStatus} onChange = {updateStatus}>
+                                <option value = {0}>All</option>
+                                <option value = {1}>Pending</option>
+                                <option value = {2}>Denied</option>
+                                <option value = {3}>Approved</option>
+                            </select>
+                        </th>
+                        <th scope = "col">
+                            Type
+                            <select value = {reimbType} onChange = {updateType}>
+                                <option value = {0}>All</option>
+                                <option value = {1}>Lodging</option>
+                                <option value = {2}>Travel</option>
+                                <option value = {3}>Food</option>
+                                <option value = {4}>Other</option>
+                            </select>
+                        </th>
                     </tr>
                 </thead>
 

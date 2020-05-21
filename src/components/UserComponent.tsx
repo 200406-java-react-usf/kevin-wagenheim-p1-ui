@@ -82,16 +82,16 @@ const UserComponent = (props: IUserProps) => {
         <>
             <h1>User Component</h1>
             
-            <table>
+            <table className = "table table-striped">
 
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th scope = "col">Id</th>
+                        <th scope = "col">First Name</th>
+                        <th scope = "col">Last Name</th>
+                        <th scope = "col">Username</th>
+                        <th scope = "col">Email</th>
+                        <th scope = "col">Role</th>
                     </tr>
                 </thead>
 
