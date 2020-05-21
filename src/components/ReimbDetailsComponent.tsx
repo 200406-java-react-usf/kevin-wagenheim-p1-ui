@@ -65,27 +65,27 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
 
         <>
 
-        <table>
+        <table className = "table">
 
             <thead><th><tr>{props.thisReimb.id} Reimbursment Details</tr></th></thead>
 
             <tbody>
 
-                <tr><td>ID:</td></tr>
+                <tr><th scope="row">ID:</th></tr>
                 <tr><td>{props.thisReimb.id}</td></tr>
-                <tr><td>Amount:</td></tr>
+                <tr><th scope="row">Amount:</th></tr>
                 <tr><td>{props.thisReimb.amount}</td></tr>
-                <tr><td>Submitted:</td></tr>
+                <tr><th scope="row">Submitted:</th></tr>
                 <tr><td>{props.thisReimb.submitted}</td></tr>
-                <tr><td>Resolved</td></tr>
+                <tr><th scope="row">Resolved</th></tr>
                 <tr><td>{props.thisReimb.resolved}</td></tr>
-                <tr><td>Description:</td></tr>
+                <tr><th scope="row">Description:</th></tr>
                 <tr><td>{props.thisReimb.description}</td></tr>
-                <tr><td>Author:</td></tr>
+                <tr><th scope="row">Author:</th></tr>
                 <tr><td>{props.thisReimb.authorId}</td></tr>
-                <tr><td>Resolver:</td></tr>
+                <tr><th scope="row">Resolver:</th></tr>
                 <tr><td>{props.thisReimb.resolverId}</td></tr>
-                <tr><td>Status:</td></tr>
+                <tr><th scope="row">Status:</th></tr>
 
                 {
                     props.thisReimb.reimbStatusId === 1 ?
@@ -100,7 +100,7 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
                         <tr><td>Unknown</td></tr>
                 }
 
-                <tr><td>Type:</td></tr>
+                <tr><th scope="row">Type:</th></tr>
 
                 {
                     props.thisReimb.reimbTypeId === 1 ?

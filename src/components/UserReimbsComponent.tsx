@@ -94,16 +94,16 @@ function UserReimbsComponent(props: IUserReimbsProps){
 
             <h1>My Reimbursments</h1>
 
-            <table>
+            <table className = "table table-striped">
 
                 <thead>
                     <tr>
-                        <th>Amount</th>
-                        <th>Description</th>
-                        <th>Author</th>
-                        <th>Resolver</th>
-                        <th>Status</th>
-                        <th>Type</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Resolver</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
                     </tr>
                 </thead>
 
