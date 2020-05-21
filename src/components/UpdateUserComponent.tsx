@@ -156,7 +156,7 @@ function UpdateUserComponent(props: IUpdateUserProps){
 
                     <br/> <br/>
 
-                    <Link to = '/users' onClick = {updateUser}>Submit</Link>
+                    <Link to = '/users' onClick = {updateUser} className = "btn btn-primary btn-m">Submit</Link>
 
                 </form>
 

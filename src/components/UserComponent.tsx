@@ -47,11 +47,11 @@ const UserComponent = (props: IUserProps) => {
 
                         <td><Link to = '/updateuser' onClick = {
                             () => {props.setThisUser(new User(user.id, user.username, user.password, user.firstName, user.lastName, user.email, user.roleId))}    
-                        }>Update</Link></td>
+                        } className = "btn btn-primary btn-m">Update</Link></td>
 
                         <td><Link to = '/users' onClick = {async () => {
                             await deleteUser(user.id);
-                        }}>Delete</Link></td>
+                        }} className = "btn btn-primary btn-m">Delete</Link></td>
 
                     </tr>
 

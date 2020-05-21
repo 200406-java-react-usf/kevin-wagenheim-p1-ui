@@ -125,8 +125,8 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
             !props.thisReimb.resolved && props.authUser.roleId === 2?
             <>
 
-                <Link to = '/reimbursments' onClick = {approveReimb}>Approve</Link>
-                <Link to = '/reimbursments' onClick = {denyReimb}>Deny</Link>
+                <Link to = '/reimbursments' onClick = {approveReimb} className = "btn btn-primary btn-m">Approve</Link>
+                <Link to = '/reimbursments' onClick = {denyReimb} className = "btn btn-primary btn-m">Deny</Link>
 
             </>
         
@@ -141,7 +141,7 @@ function ReimbDetailsComponent(props: IReimbDetailsProps){
 
             props.thisReimb.reimbStatusId === 1 ?
 
-            <Link to = '/updatereimbursment'>Update</Link>
+            <Link to = '/updatereimbursment' className = "btn btn-primary btn-m">Update</Link>
             
             :
 

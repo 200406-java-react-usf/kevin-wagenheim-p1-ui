@@ -125,11 +125,11 @@ function UpdateReimbComponent(props: IUpdateReimbProps){
 
                         props.authUser.roleId === 2 ?
 
-                            <Link to = '/reimbursments' onClick = {updateReimb}>Submit</Link>
+                            <Link to = '/reimbursments' onClick = {updateReimb} className = "btn btn-primary btn-m">Submit</Link>
                         
                         :
 
-                            <Link to = '/myreimbursments' onClick = {updateReimb}>Submit</Link>
+                            <Link to = '/myreimbursments' onClick = {updateReimb} className = "btn btn-primary btn-m">Submit</Link>
 
                     }
 

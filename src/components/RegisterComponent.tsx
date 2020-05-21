@@ -149,7 +149,7 @@ function RegisterComponent(props: IRegisterProps){
 
                     <br/> <br/>
 
-                    <Link to = '/users' onClick = {registerUser}>Submit</Link>
+                    <Link to = '/users' onClick = {registerUser} className = "btn btn-primary btn-m">Submit</Link>
 
                 </form>
 

@@ -81,7 +81,7 @@ const ReimbComponent = (props: IReimbProps) =>{
                                     const response = await getReimbById(reimb.id);
                                     props.setThisReimb(response);
                                 }
-                            }>Details</Link></td>
+                            } className = "btn btn-primary btn-m">Details</Link></td>
     
     
                         </tr>
