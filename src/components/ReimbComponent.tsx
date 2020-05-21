@@ -98,7 +98,7 @@ const ReimbComponent = (props: IReimbProps) =>{
 
         fetchData();
 
-    }, [reimbStatus, reimbType]);
+    }, [reimbStatus, reimbType, reimbs]);
 
     return(
         !props.authUser || (props.authUser.roleId !== 2) ?
