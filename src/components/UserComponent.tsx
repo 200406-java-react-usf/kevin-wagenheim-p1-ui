@@ -3,7 +3,7 @@ import { User } from '../models/users';
 import { getAllUsers, deleteUser } from '../remote/user-service';
 import { Link } from 'react-router-dom';
 
-interface IUserProps{
+export interface IUserProps{
 
     authUser: User;
     setThisUser: (user: User) => void;
