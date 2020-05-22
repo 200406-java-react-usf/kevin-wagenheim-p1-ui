@@ -4,7 +4,7 @@ import {User} from '../models/users';
 import { getUserReimbs, getReimbById } from '../remote/reimb-services';
 import { Link } from 'react-router-dom';
 
-interface IUserReimbsProps{
+export interface IUserReimbsProps{
 
     authUser: User;
     setThisReimb: (reimb: Reimbursments) => void;
