@@ -5,7 +5,7 @@ import {reimbClient} from '../remote/reimb-client';
 import { Reimbursments } from '../models/reimb';
 import { Link } from 'react-router-dom';
 
-interface IUpdateReimbProps{
+export interface IUpdateReimbProps{
 
     authUser: User;
     thisReimb: Reimbursments;
