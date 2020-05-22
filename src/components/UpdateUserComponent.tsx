@@ -4,7 +4,7 @@ import { User } from '../models/users';
 import {reimbClient} from '../remote/reimb-client';
 import { Link } from 'react-router-dom';
 
-interface IUpdateUserProps{
+export interface IUpdateUserProps{
 
     authUser: User;
     thisUser: User;
